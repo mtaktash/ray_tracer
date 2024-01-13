@@ -10,8 +10,10 @@ https://raytracing.github.io/books/RayTracingInOneWeekend.html#overview
 
 ## Results
 
-1. Initial red and green image plane `image.ppm``
+1. Initial red and green image plane `image.ppm`
 
-2. Rendering of blue gradient 16:9 image is `image1.ppm``
+2. Rendering of blue gradient 16:9 image is `image1.ppm`
 
 3. Rendering of a sphere `image2.ppm`
+
+4. Sphere shared with surface normals `image3.ppm`
