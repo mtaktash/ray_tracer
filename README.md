@@ -10,15 +10,8 @@ https://raytracing.github.io/books/RayTracingInOneWeekend.html#overview
 
 ## Results
 
-1. Initial commit
+1. Initial red and green image plane `image.ppm``
 
-![Rendering of red and green square image](image.ppm)
+2. Rendering of blue gradient 16:9 image is `image1.ppm``
 
-
-2. Adding image plane
-
-![Rendering of blue gradient 16:9 image](image1.ppm)
-
-3. Adding sphere
-
-![Rendering of a sphere](image2.ppm)
+3. Rendering of a sphere `image2.ppm`
