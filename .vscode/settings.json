@@ -1,6 +1,7 @@
 {
     "files.associations": {
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "memory": "cpp"
     },
     "clang-format.executable": "/opt/homebrew/bin/clang-format"
 }
