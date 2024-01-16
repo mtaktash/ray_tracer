@@ -49,3 +49,5 @@ clang++ main.cpp -std=c++11 -o main
 12. Longer distance (wide angle) rendering `image11.ppm`
 
 13. Close up rendering `image12.ppm`
+
+14. Close up rendering with defocus `image13.ppm`
