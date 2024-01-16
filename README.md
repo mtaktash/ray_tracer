@@ -42,4 +42,6 @@ clang++ main.cpp -std=c++11 -o main
 
 9. Fuzzed metal `image8.ppm`
 
-10. Dielectric `image9.ppm`
+10. Dielectric `image9.ppm` 
+
+11. Dielectric and metal `image10.ppm`
