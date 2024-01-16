@@ -22,7 +22,7 @@ clang++ main.cpp -std=c++11 -o main
 ```
 
 
-## Results
+## Results (`images` folder)
 
 1. Initial red and green image plane `image.ppm`
 
@@ -41,3 +41,5 @@ clang++ main.cpp -std=c++11 -o main
 8. Render with diffuse and metal materials `image7.ppm`
 
 9. Fuzzed metal `image8.ppm`
+
+10. Dielectric `image9.ppm`
