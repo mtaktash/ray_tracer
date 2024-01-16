@@ -1,7 +1,8 @@
 {
     "files.associations": {
         "iostream": "cpp",
-        "memory": "cpp"
+        "memory": "cpp",
+        "limits": "cpp"
     },
     "clang-format.executable": "/opt/homebrew/bin/clang-format",
     "C_Cpp.default.compilerPath": "/usr/bin/clang",

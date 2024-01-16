@@ -30,4 +30,7 @@ clang++ main.cpp -std=c++11 -o main
 
 3. Rendering of a sphere `image2.ppm`
 
-4. Sphere shared with surface normals `image3.ppm`
+4. Sphere shaded with surface normals `image3.ppm`
+
+5. Two spheres rendered with camera and interval class shaded with surface normals `image4.ppm`
+
