@@ -34,3 +34,4 @@ clang++ main.cpp -std=c++11 -o main
 
 5. Two spheres rendered with camera and interval class shaded with surface normals `image4.ppm`
 
+6. Added antialiasing `image5.ppm`
