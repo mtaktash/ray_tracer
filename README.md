@@ -37,3 +37,5 @@ clang++ main.cpp -std=c++11 -o main
 6. Added antialiasing `image5.ppm`
 
 7. First render of a diffuse sphere `image6.ppm`
+
+8. Render with diffuse and metal materials `image7.ppm`
