@@ -4,8 +4,6 @@
 #include <cmath>
 #include <iostream>
 
-using std::sqrt;
-
 class vec3 {
    public:
     double e[3];
@@ -45,7 +43,7 @@ class vec3 {
 
     vec3 &operator/=(double t) { return *this *= 1 / t; }
 
-    double length() const { return sqrt(length_squared()); }
+    double length() const { return std::sqrt(length_squared()); }
 
     double length_squared() const { return e[0] * e[0] + e[1] * e[1] + e[2] * e[2]; }
 };
