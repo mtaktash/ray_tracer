@@ -45,3 +45,5 @@ clang++ main.cpp -std=c++11 -o main
 10. Dielectric `image9.ppm` 
 
 11. Dielectric and metal `image10.ppm`
+
+12. Longer distance (wide angle) rendering `image11.ppm`
