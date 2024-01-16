@@ -3,5 +3,15 @@
         "iostream": "cpp",
         "memory": "cpp"
     },
-    "clang-format.executable": "/opt/homebrew/bin/clang-format"
+    "clang-format.executable": "/opt/homebrew/bin/clang-format",
+    "C_Cpp.default.compilerPath": "/usr/bin/clang",
+    "C_Cpp.default.cStandard": "c17",
+    "C_Cpp.default.cppStandard": "c++17",
+    "C_Cpp.clang_format_fallbackStyle": "Google",
+    "C_Cpp.autocompleteAddParentheses": true,
+    "C_Cpp.clang_format_path": "../.clang-format",
+    "editor.formatOnSave": true,
+    "notebook.formatOnSave.enabled": true,
+    "C_Cpp.clang_format_sortIncludes": true,
+    "terminal.integrated.defaultProfile.osx": "zsh",
 }

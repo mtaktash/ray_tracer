@@ -9,6 +9,19 @@ https://raytracing.github.io/books/RayTracingInOneWeekend.html#overview
 - Used C++ and clang-format extensions for VSCode
 
 
+## Compile 
+
+```
+clang++ main.cpp -std=c++11 -o main
+```
+
+## Run
+
+```
+./main > image_test.ppm
+```
+
+
 ## Results
 
 1. Initial red and green image plane `image.ppm`
