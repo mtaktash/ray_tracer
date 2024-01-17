@@ -23,7 +23,7 @@ clang++ main.cpp -std=c++11 -o main
 
 ## Result
 
- [Resulting render](result.jpg) 
+![Resulting render](result.jpg) 
 
 
 ## Intermediate results (`images` folder)
