@@ -21,8 +21,12 @@ clang++ main.cpp -std=c++11 -o main
 ./main > image_test.ppm
 ```
 
+## Result
 
-## Results (`images` folder)
+ [Resulting render](result.jpg) 
+
+
+## Intermediate results (`images` folder)
 
 1. Initial red and green image plane `image.ppm`
 
