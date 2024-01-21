@@ -97,6 +97,7 @@ void two_spheres() {
 
     cam.render(world);
 }
+
 void earth() {
     auto earth_texture = std::make_shared<image_texture>("earthmap.jpg");
     auto earth_surface = std::make_shared<lambertian>(earth_texture);
@@ -110,7 +111,7 @@ void earth() {
     cam.max_depth = 50;
 
     cam.vfov = 20;
-    cam.lookfrom = point3(0, 0, 12);
+    cam.lookfrom = point3(12, 12, 12);
     cam.lookat = point3(0, 0, 0);
     cam.vup = vec3(0, 1, 0);
 
