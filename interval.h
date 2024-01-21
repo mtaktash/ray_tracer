@@ -11,6 +11,13 @@ class interval {
 
     interval(double _min, double _max) : min(_min), max(_max) {}
 
+    double size() const { return max - min; }
+
+    interval expand(double delta) const {
+        auto padding = delta / 2;
+        return interval(min - padding, max + padding);
+    }
+
     bool contains(double x) const { return min <= x && x <= max; }
 
     bool surrounds(double x) const { return min < x && x < max; }
