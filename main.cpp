@@ -4,6 +4,7 @@
 #include "bvh.h"
 #include "camera.h"
 #include "color.h"
+#include "hittable.h"
 #include "hittable_list.h"
 #include "material.h"
 #include "quad.h"
@@ -227,8 +228,15 @@ void cornell_box() {
     world.add(std::make_shared<quad>(point3(555, 555, 555), vec3(-555, 0, 0), vec3(0, 0, -555), white));
     world.add(std::make_shared<quad>(point3(0, 0, 555), vec3(555, 0, 0), vec3(0, 555, 0), white));
 
-    world.add(box(point3(130, 0, 65), point3(295, 165, 230), white));
-    world.add(box(point3(265, 0, 295), point3(430, 330, 460), white));
+    std::shared_ptr<hittable> box1 = box(point3(0, 0, 0), point3(165, 330, 165), white);
+    box1 = std::make_shared<rotate_y>(box1, 15);
+    box1 = std::make_shared<translate>(box1, vec3(265, 0, 295));
+    world.add(box1);
+
+    std::shared_ptr<hittable> box2 = box(point3(0, 0, 0), point3(165, 165, 165), white);
+    box2 = std::make_shared<rotate_y>(box2, -18);
+    box2 = std::make_shared<translate>(box2, vec3(130, 0, 65));
+    world.add(box2);
 
     camera cam;
 
