@@ -408,7 +408,7 @@ void cornell_box_stratified() {
 
     cam.aspect_ratio = 1.0;
     cam.image_width = 600;
-    cam.samples_per_pixel = 64;
+    cam.samples_per_pixel = 100;
     cam.sqrt_spp = sqrt(cam.samples_per_pixel);
     cam.recip_sqrt_spp = 1.0 / cam.sqrt_spp;
     cam.max_depth = 50;
