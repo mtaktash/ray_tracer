@@ -124,7 +124,7 @@ class camera {
         if (dot(to_light, rec.normal) < 0) return color_from_emission;
 
         double light_area = (343 - 213) * (332 - 227);
-        auto light_cosine = fabs(to_light.y());
+        auto light_cosine = std::fabs(to_light.y());
         if (light_cosine < 0.000001) return color_from_emission;
 
         pdf = distance_squared / (light_cosine * light_area);
