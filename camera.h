@@ -14,8 +14,10 @@ class camera {
     double aspect_ratio = 1.0;   // Ratio of image width over height
     int image_width = 100;       // Rendered image width in pixel count
     int samples_per_pixel = 10;  // Count of random samples for each pixel
-    int max_depth = 10;          // Maximum number of ray bounces into scene
-    color background;            // Scene background color
+    int sqrt_spp;
+    double recip_sqrt_spp;  // 1 / sqrt_spp
+    int max_depth = 10;     // Maximum number of ray bounces into scene
+    color background;       // Scene background color
 
     double vfov = 90;                    // Vertical view angle (field of view)
     point3 lookfrom = point3(0, 0, -1);  // Point camera is looking from
@@ -34,9 +36,11 @@ class camera {
             std::clog << "\rScanlines remaining: " << (image_height - j) << ' ' << std::flush;
             for (int i = 0; i < image_width; ++i) {
                 color pixel_color(0, 0, 0);
-                for (int sample = 0; sample < samples_per_pixel; ++sample) {
-                    ray r = get_ray(i, j);
-                    pixel_color += ray_color(r, max_depth, world);
+                for (int s_j = 0; s_j < sqrt_spp; ++s_j) {
+                    for (int s_i = 0; s_i < sqrt_spp; ++s_i) {
+                        ray r = get_ray(i, j, s_i, s_j);
+                        pixel_color += ray_color(r, max_depth, world);
+                    }
                 }
                 write_color(std::cout, pixel_color, samples_per_pixel);
             }
@@ -116,12 +120,12 @@ class camera {
         return color_from_emission + color_from_scatter;
     }
 
-    ray get_ray(int i, int j) const {
+    ray get_ray(int i, int j, int s_i, int s_j) const {
         // Get a randomly-sampled camera ray for the pixel at location i,j, originating from
-        // the camera defocus disk.
+        // the camera defocus disk, and randomly sampled around the pixel location.
 
         auto pixel_center = pixel00_loc + (i * pixel_delta_u) + (j * pixel_delta_v);
-        auto pixel_sample = pixel_center + pixel_sample_square();
+        auto pixel_sample = pixel_center + pixel_sample_square(s_i, s_j);
 
         auto ray_origin = (defocus_angle <= 0) ? center : defocus_disk_sample();
         auto ray_direction = pixel_sample - ray_origin;
@@ -130,10 +134,11 @@ class camera {
         return ray(ray_origin, ray_direction, ray_time);
     }
 
-    vec3 pixel_sample_square() const {
-        // Returns a random point in the square surrounding a pixel at the origin.
-        auto px = -0.5 + random_double();
-        auto py = -0.5 + random_double();
+    vec3 pixel_sample_square(int s_i, int s_j) const {
+        // Returns a random point in the square surrounding a pixel at the origin, given
+        // the two subpixel indices.
+        auto px = -0.5 + recip_sqrt_spp * (s_i + random_double());
+        auto py = -0.5 + recip_sqrt_spp * (s_j + random_double());
         return (px * pixel_delta_u) + (py * pixel_delta_v);
     }
 };
